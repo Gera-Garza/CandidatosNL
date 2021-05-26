@@ -1,10 +1,9 @@
-import logo from './logo.svg';
 import './App.css';
 import Home from'./Home';
 import Gobernadores from'./Gobernadores';
 import Ayuntamiento from'./Ayuntamiento';
 import Diputados from'./diputados';
-import {Route,Link} from 'react-router-dom';
+import {Route} from 'react-router-dom';
 import Navbar from "./NavBar";
 
 function App() {
