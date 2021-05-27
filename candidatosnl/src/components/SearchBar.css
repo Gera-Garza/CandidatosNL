@@ -1,0 +1,10 @@
+.searchBar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30vh;
+}
+
+.form-inline .form-control {
+    width: 50vw !important;
+}

@@ -1,19 +1,17 @@
 import './App.css';
-import Home from'./Home';
-import Gobernadores from'./Gobernadores';
-import Ayuntamiento from'./Ayuntamiento';
-import Diputados from'./diputados';
+import Home from'./components/Home';
+import CandidatosGrid from'./components/CandidatosGrid';
+import CandidatoPerfil from './components/CandidatoPerfil'
 import {Route} from 'react-router-dom';
-import Navbar from "./NavBar";
+import Navbar from "./components/NavBar";
 
 function App() {
   return (
     <div className="App">
       <Navbar />
       <Route exact path="/" component={Home}/>
-      <Route exact path="/Gobernadores" component={Gobernadores}/>
-      <Route exact path="/Ayuntamiento" component={Ayuntamiento}/>
-      <Route exact path="/diputados" component={Diputados}/>
+      <Route exact path="/Candidatos" component={CandidatosGrid}/>
+      <Route exact path="/CandidatoPerfil" component={CandidatoPerfil}/>
     </div>
   );
 }
