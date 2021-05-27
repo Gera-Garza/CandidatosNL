@@ -11,7 +11,7 @@ const CandidatosGrid = () => {
             <PartidoDropdown/>
             <CandidaturaDropdown/>
             </div>
-            <CandidatoPerfil/>
+            {/* <CandidatoPerfil/> */}
             </div>
         </div>
     )

@@ -10,13 +10,13 @@ function Navbar(){
             <a className="nav-link" href="/">Home</a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="/Candidatos" id="navbardrop" data-toggle="dropdown">
+            <a className="nav-link" href="/Candidatos">
               Candidatos
             </a>
           </li>
 
           <li className="nav-item">
-            <a className="nav-link" href="/Nosotros" id="navbardrop" data-toggle="dropdown">
+            <a className="nav-link" href="/Nosotros">
               Acerca de
             </a>
           </li>
