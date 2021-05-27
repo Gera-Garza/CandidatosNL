@@ -6,9 +6,9 @@ import SearchBar from './SearchBar';
 function Home() {
     return (
         <div>
-
        <SearchBar/>
-       <div class="container">
+       <div class="container" style={{paddingBottom: "10px"}}>
+           <h1 className="text-left">Últimas noticias</h1>
            <div className="row" style={{paddingBottom: "30px"}}>
            <NewsCard/>
            <NewsCard/>
