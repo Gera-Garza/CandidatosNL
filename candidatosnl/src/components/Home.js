@@ -25,10 +25,10 @@ function Home() {
         // console.log(cards)
 
         const results = candidateCards && candidateCards.filter(card =>
-            card.nombre == searchTerm
+            card.nombre === searchTerm
         );
         setSearchResults(results);
-        console.log(searchResults)
+        // console.log(searchResults)
     }, [searchTerm])
 
     return (
