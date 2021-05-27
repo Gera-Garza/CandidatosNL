@@ -1,9 +1,6 @@
 import React from 'react'
 
 const CandidatoCard = (props) => {
-
-
-    console.log(props)
     return (
         <div>
             <div className="col-sm" style={{marginBottom: "30px"}}>

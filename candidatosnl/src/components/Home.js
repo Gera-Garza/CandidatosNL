@@ -1,6 +1,6 @@
 import React from 'react'
 import './Home.css'
-import NewsCard from './NewsCard';
+import NewsGrid from './NewsGrid';
 import SearchBar from './SearchBar';
 
 function Home() {
@@ -9,18 +9,9 @@ function Home() {
        <SearchBar/>
        <div class="container" style={{paddingBottom: "10px"}}>
            <h1 className="text-left">Últimas noticias</h1>
-           <div className="row" style={{paddingBottom: "30px"}}>
-           <NewsCard/>
-           <NewsCard/>
-           <NewsCard/>
-           </div>
-           <div className="row">
-           <NewsCard/>
-           <NewsCard/>
-           <NewsCard/>
+           <NewsGrid/>
            </div>
        </div>
-        </div>
     )
 }
 export default Home;
