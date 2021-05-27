@@ -22,7 +22,6 @@ const NewsGrid = () => {
         <div className="row">
             {
                 cards && cards.map(card => {
-                    console.log(card)
                     return (
                         <NewsCard key={card.titulo} titulo={card.titulo} descripcion={card.descripcion} imagen={card.imagen} enlace={card.enlace} />
                     )
