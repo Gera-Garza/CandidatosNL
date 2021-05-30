@@ -46,7 +46,7 @@ const CandidatosGrid = () => {
                     filterResults.map(item => {
                         return(
                             <div>
-                                <CandidatoCard key={item.nombre} nombre={item.nombre} body={item.descripcion} imagen={item.imagen}/>
+                                <CandidatoCard key={item.nombre} nombre={item.nombre} body={item.descripcion} imagen={item.imagen} logros={item.logrosHistorial} propuestas={item.propuestas}/>
                             </div>
                         )
                     })

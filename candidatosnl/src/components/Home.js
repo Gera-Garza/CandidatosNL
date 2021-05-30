@@ -41,7 +41,7 @@ function Home() {
                             <div>
 
                                 <h1>Candidato(s) encontrado</h1>
-                                <CandidatoCard nombre={item.nombre} body={item.descripcion} imagen={item.imagen} />
+                                <CandidatoCard key={item.nombre} nombre={item.nombre} body={item.descripcion} imagen={item.imagen} logros={item.logrosHistorial} propuestas={item.propuestas}/>
                             </div>
                         )
                     })
