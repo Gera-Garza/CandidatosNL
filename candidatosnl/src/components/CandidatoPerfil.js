@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from 'react-html-parser';
 import './CandidatoPerfil.css'
 const CandidatoPerfil = (props) => {
     const [showProposals, setShowProposals] = useState(true)
@@ -20,10 +21,10 @@ const CandidatoPerfil = (props) => {
         setShowProposals(false)
     }
     const ProposalsDiv = () => <div className="tab-pane fade show active text-left" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-        {props.location.candidatoProps.proposals}
+        {ReactHtmlParser(props.location.candidatoProps.proposals)}
     </div>;
     const AchievementsDiv = () => <div className="tab-pane fade show active text-left" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-        {props.location.candidatoProps.achievements}
+        {ReactHtmlParser(props.location.candidatoProps.achievements)}
     </div>;
     const NewsDiv = () => <div className="tab-pane fade show active text-left" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">Noticias
     </div>

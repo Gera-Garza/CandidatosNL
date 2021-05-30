@@ -42,7 +42,6 @@ function Home() {
                     searchResults.map(item => {
                         return (
                             <div>
-
                                 <h1>Candidato(s) encontrado</h1>
                                 <CandidatoCard key={item.nombre} nombre={item.nombre} body={item.descripcion} imagen={item.imagen} logros={item.logrosHistorial} propuestas={item.propuestas}/>
                             </div>
