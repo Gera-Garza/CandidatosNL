@@ -4,6 +4,7 @@ import CandidatosGrid from'./components/CandidatosGrid';
 import CandidatoPerfil from './components/CandidatoPerfil'
 import {Route} from 'react-router-dom';
 import Navbar from "./components/NavBar";
+import Acerca from './components/Acerca';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Route exact path="/" component={Home}/>
       <Route exact path="/Candidatos" component={CandidatosGrid}/>
       <Route exact path="/CandidatoPerfil" component={CandidatoPerfil}/>
+      <Route exact path="/Nosotros" component={Acerca}/>
     </div>
   );
 }
