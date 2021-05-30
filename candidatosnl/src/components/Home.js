@@ -4,11 +4,13 @@ import CandidatoCard from './CandidatoCard';
 import './Home.css'
 import NewsGrid from './NewsGrid';
 import SearchBar from './SearchBar';
+
+
 function Home() {
     const [searchTerm, setSearchTerm] = useState("")
     const [searchResults, setSearchResults] = useState([])
-    const handleChange = event => {
-        setSearchTerm(event.target.value)
+    const handleChange = val => {
+        console.log(val[0])
     }
     const [candidateCards, setCards] = useState([])
     const fetchCards = async () => {
@@ -16,6 +18,7 @@ function Home() {
         const data = await response.get();
         let candidates = []
         data.docs.forEach(item => {
+            //console.log(Object.values(item.data()))
             candidates = [...candidates, ...Object.values(item.data())]
         })
         setCards(candidates)
@@ -33,7 +36,7 @@ function Home() {
 
     return (
         <div>
-            <SearchBar searchTerm={searchTerm} handleChange={handleChange} />
+            <SearchBar handleChange={handleChange} allCandidates={candidateCards}/>
             <div class="container" style={{ paddingBottom: "10px" }}>
                 {
                     searchResults.map(item => {

@@ -5,7 +5,7 @@ import CandidaturaDropdown from './CandidaturaDropdown'
 import PartidoDropdown from './PartidoDropdown'
 
 const CandidatosGrid = () => {
-    const [filterCandidate, setFilterCandidate] = useState("")
+    const [filterCandidate, setFilterCandidate] = useState("Gobernador")
     const [filterResults, setFilterResults] = useState([])
     const handleClick = event => {
         console.log(event.target.innerText)
@@ -33,7 +33,7 @@ const CandidatosGrid = () => {
             setFilterResults(results)
     }, [cards])
     
-
+    console.log(filterCandidate)
     return (
         <div>
             <div className="container">
