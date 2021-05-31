@@ -5,3 +5,7 @@
 .candidatoPerfilNav {
     padding-bottom: 1rem;
 }
+
+.candidatoPerfilContainer .social {
+    text-align: left;
+}

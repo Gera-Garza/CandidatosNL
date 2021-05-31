@@ -6,7 +6,7 @@ import './CandidatoPerfil.css';
 
 const CandidatoPerfil = (props) => {
     const [showProposals, setShowProposals] = useState(true);
-    const [candidato, setCandidato] = useState({imagen: null, nombre: null, propuestas: null, logrosHistorial: null})
+    const [candidato, setCandidato] = useState({imagen: null, nombre: null, propuestas: null, logrosHistorial: null, email: null, facebook: null, instagram: null})
     let { id } = useParams();
     const handleProposals = () => {
         setShowProposals(true)
@@ -53,9 +53,13 @@ const CandidatoPerfil = (props) => {
     return (
         <div className="container candidatoPerfilContainer">
             <div className="row">
-                <div className="col-sm-3">
-                    <img src={candidato.imagen} alt="" srcset="" style={{ width: "200px", height: "200px" }} />
+                <div className="col-sm-3" className="social">
+                    <img src={candidato.imagen} alt="" srcset="" style={{ width: "200px", height: "200px", objectFit: 'cover' }} />
                     <h3>{candidato.nombre}</h3>
+                    <hr />
+                    { candidato.email ? <p>{candidato.email}</p> : null }
+                    { candidato.facebook ? <p><a href={'https://facebook.com/' + candidato.facebook} target="blank">Facebook</a></p> : null }
+                    { candidato.instagram ? <p><a href={'https://instagram.com/' + candidato.instagram} target="blank">Instagram</a></p> : null }
                 </div>
                 <div className="col-sm">
                     <div>
