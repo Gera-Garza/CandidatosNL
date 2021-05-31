@@ -8,18 +8,25 @@ import SearchBar from './SearchBar';
 
 function Home() {
     const [searchTerm, setSearchTerm] = useState("")
-    const [searchResults, setSearchResults] = useState([])
+    const [searchResults, setSearchResults] = useState([]);
+    
     const handleChange = val => {
         console.log(val[0])
     }
+
     const [candidateCards, setCards] = useState([])
     const fetchCards = async () => {
         const response = db.collection('candidatosnl');
         const data = await response.get();
         let candidates = []
         data.docs.forEach(item => {
-            //console.log(Object.values(item.data()))
-            candidates = [...candidates, ...Object.values(item.data())]
+            let data = Object.values(item.data());
+            
+            for (var i = 0; i < data.length; i++) {
+                data[i].url=  Object.keys(item.data())[i];
+            }
+            
+            candidates = [...candidates, ...data]
         })
         setCards(candidates)
     }
