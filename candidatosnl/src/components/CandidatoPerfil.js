@@ -54,7 +54,7 @@ const CandidatoPerfil = (props) => {
         <div className="container candidatoPerfilContainer">
             <div className="row">
                 <div className="col-sm-3">
-                    <img src={candidato.imagen} alt="" srcset="" style={{ width: "200px", height: "200px" }} />
+                    <img src={candidato.imagen} alt="" srcset="" style={{ width: "200px", height: "200px", objectFit: 'cover' }} />
                     <h3>{candidato.nombre}</h3>
                 </div>
                 <div className="col-sm">
