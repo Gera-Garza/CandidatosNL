@@ -12,7 +12,7 @@ function App() {
       <Navbar />
       <Route exact path="/" component={Home}/>
       <Route exact path="/Candidatos" component={CandidatosGrid}/>
-      <Route exact path="/CandidatoPerfil" component={CandidatoPerfil}/>
+      <Route exact path="/CandidatoPerfil/:id" component={CandidatoPerfil}/>
       <Route path="/Nosotros" component={Acerca}/>
     </div>
   );

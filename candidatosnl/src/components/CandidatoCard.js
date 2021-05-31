@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import CandidatoPerfil from './CandidatoPerfil'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom"
+import './CandidatoCard.css';
 const CandidatoCard = (props) => {
     return (
-        <div>
+        <div className="candidatoCard">
             <div className="col-sm" style={{ marginBottom: "30px" }}>
                 <div className="card" style={{ width: "18rem" }}>
                     <img className="card-img-top" src={props.imagen} alt="Card cap" />
@@ -12,13 +13,7 @@ const CandidatoCard = (props) => {
                         <p className="card-text">{props.body}</p>
                         <a className="btn btn-primary">
                             <Link to={{
-                            pathname: '/CandidatoPerfil',
-                            candidatoProps: {
-                                name: props.nombre,
-                                image: props.imagen,
-                                proposals: props.propuestas,
-                                achievements: props.logros
-                            }
+                            pathname: '/CandidatoPerfil/'+ props.url
                         }}>
                         Ver candidato</Link></a>
                     </div>
