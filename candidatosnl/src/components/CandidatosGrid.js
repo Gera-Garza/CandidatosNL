@@ -17,13 +17,19 @@ const CandidatosGrid = () => {
         const data = await response.get();
         let candidates = []
         data.docs.forEach(item => {
-            candidates = [...candidates, ...Object.values(item.data())]
+            let data = Object.values(item.data());
+            
+            for (var i = 0; i < data.length; i++) {
+                data[i].url=  Object.keys(item.data())[i];
+            }
+            
+            candidates = [...candidates, ...data]
         })
         setCards(candidates)
     }
     useEffect(() => {
         fetchCards();
-    })
+    }, [])
 
     useEffect(() => {
         const results = cards && cards.filter( card => 
@@ -33,7 +39,6 @@ const CandidatosGrid = () => {
             setFilterResults(results)
     }, [cards])
     
-    console.log(filterCandidate)
     return (
         <div>
             <div className="container">
@@ -44,9 +49,10 @@ const CandidatosGrid = () => {
                 <div className="row">
                 {
                     filterResults.map(item => {
+                        console.log(item)
                         return(
                             <div>
-                                <CandidatoCard key={item.nombre} nombre={item.nombre} body={item.descripcion} imagen={item.imagen} logros={item.logrosHistorial} propuestas={item.propuestas}/>
+                                <CandidatoCard key={item.nombre} nombre={item.nombre} body={item.descripcion} imagen={item.imagen} logros={item.logrosHistorial} propuestas={item.propuestas} url={item.url}/>
                             </div>
                         )
                     })

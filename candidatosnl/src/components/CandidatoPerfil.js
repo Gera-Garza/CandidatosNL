@@ -1,8 +1,13 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from 'react-html-parser';
-import './CandidatoPerfil.css'
+import { useParams } from 'react-router-dom';
+import db from '../services/firebase';
+import './CandidatoPerfil.css';
+
 const CandidatoPerfil = (props) => {
-    const [showProposals, setShowProposals] = useState(true)
+    const [showProposals, setShowProposals] = useState(true);
+    const [candidato, setCandidato] = useState({imagen: null, nombre: null, propuestas: null, logrosHistorial: null})
+    let { id } = useParams();
     const handleProposals = () => {
         setShowProposals(true)
         setShowAchievements(false)
@@ -21,19 +26,36 @@ const CandidatoPerfil = (props) => {
         setShowProposals(false)
     }
     const ProposalsDiv = () => <div className="tab-pane fade show active text-left" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-        {ReactHtmlParser(props.location.candidatoProps.proposals)}
+        {ReactHtmlParser(candidato.propuestas)}
     </div>;
     const AchievementsDiv = () => <div className="tab-pane fade show active text-left" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-        {ReactHtmlParser(props.location.candidatoProps.achievements)}
+        {ReactHtmlParser(candidato.logrosHistorial)}
     </div>;
     const NewsDiv = () => <div className="tab-pane fade show active text-left" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">Noticias
     </div>
+
+    const fetchCards = async () => {
+        const response = db.collection('candidatosnl');
+        const data = await response.get();
+        let candidates = []
+        
+        data.docs.forEach(item => {
+            if (item.data()[id] != undefined) {
+                setCandidato(item.data()[id]);
+            }
+        })
+    }
+
+    useEffect(() => {
+        fetchCards();
+    }, [])
+    
     return (
         <div className="container candidatoPerfilContainer">
             <div className="row">
                 <div className="col-sm-3">
-                    <img src={props.location.candidatoProps.image} alt="" srcset="" style={{ width: "200px", height: "200px" }} />
-                    <h3>{props.location.candidatoProps.name}</h3>
+                    <img src={candidato.imagen} alt="" srcset="" style={{ width: "200px", height: "200px" }} />
+                    <h3>{candidato.nombre}</h3>
                 </div>
                 <div className="col-sm">
                     <div>
@@ -45,9 +67,9 @@ const CandidatoPerfil = (props) => {
                             </div>
                         </nav>
                         <div className="tab-content" id="nav-tabContent">
-                            {showProposals ? <ProposalsDiv/> : null}
-                            {showAchievements ? <AchievementsDiv/> : null}
-                            {showNews ? <NewsDiv/> : null}
+                            {showProposals ? <ProposalsDiv /> : null}
+                            {showAchievements ? <AchievementsDiv /> : null}
+                            {showNews ? <NewsDiv /> : null}
                         </div>
                     </div>
                 </div>
