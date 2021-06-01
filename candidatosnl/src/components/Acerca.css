@@ -1,3 +1,8 @@
 .acercaContainer {
     padding-top: 3rem !important;
+    text-align: left;
+}
+
+.acercaContainer p{
+    font-size: 20px;
 }

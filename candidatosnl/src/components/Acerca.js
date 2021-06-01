@@ -4,8 +4,10 @@ const Acerca = () => {
     return (
         <div className="container acercaContainer">
             <h2>Acera de nosotros</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        
+            <p>Nuestro objetivo es que cualquier persona que visite nuestro portal pueda indagar más sobre los candidatos en Nuevo León, desde gobernadores, diputados y presidentes municipales, también podrán encontrar información como su trayectoria profesional, propuestas diferentes cargos que ha tenido y sus redes sociales.
+            <br />
+Todo esto con el propósito para que puedan llevar un seguimiento de todo lo que han hecho los candidatos, así como todo lo que planean hacer para mejoramiento de la comunidad y en base a esto puedan tomar mejores decisiones al momento de decantarse por algún candidato</p>
+
         </div>
     )
 }

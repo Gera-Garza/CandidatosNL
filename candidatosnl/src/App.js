@@ -5,6 +5,7 @@ import CandidatoPerfil from './components/CandidatoPerfil'
 import {Route} from 'react-router-dom';
 import Navbar from "./components/NavBar";
 import Acerca from './components/Acerca';
+import TiposCandidaturas from './components/TiposCandidaturas';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Route exact path="/" component={Home}/>
       <Route exact path="/Candidatos" component={CandidatosGrid}/>
       <Route exact path="/CandidatoPerfil/:id" component={CandidatoPerfil}/>
+      <Route path="/tipos-candidaturas" component={TiposCandidaturas}/>
       <Route path="/Nosotros" component={Acerca}/>
     </div>
   );

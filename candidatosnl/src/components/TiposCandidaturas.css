@@ -1,0 +1,21 @@
+.tipos-candidatos .grey {
+    color: rgb(70, 70, 70);
+    padding: 100px;
+    background-color: rgb(243, 243, 243);
+    text-align: left;
+}
+
+.tipos-candidatos .white {
+    color: rgb(70, 70, 70);
+    padding: 100px;
+    background-color: white;
+    text-align: right;
+}
+
+.tipos-candidatos .grey p{
+    font-size: 24px;
+}
+
+.tipos-candidatos .white p{
+    font-size: 24px;
+}
